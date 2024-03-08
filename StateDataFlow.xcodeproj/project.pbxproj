@@ -11,6 +11,10 @@
 		1141EE5C2B9B35B400CCDAD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1141EE5B2B9B35B400CCDAD6 /* ContentView.swift */; };
 		1141EE5E2B9B35B500CCDAD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1141EE5D2B9B35B500CCDAD6 /* Assets.xcassets */; };
 		1141EE612B9B35B500CCDAD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1141EE602B9B35B500CCDAD6 /* Preview Assets.xcassets */; };
+		1141EE692B9B370100CCDAD6 /* ContentViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1141EE682B9B370100CCDAD6 /* ContentViewViewModel.swift */; };
+		1141EE6C2B9B4B8300CCDAD6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1141EE6B2B9B4B8300CCDAD6 /* LoginView.swift */; };
+		1141EE6E2B9B4BA600CCDAD6 /* LoginViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1141EE6D2B9B4BA600CCDAD6 /* LoginViewViewModel.swift */; };
+		1141EE712B9B555D00CCDAD6 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1141EE702B9B555D00CCDAD6 /* RootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		1141EE5B2B9B35B400CCDAD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1141EE5D2B9B35B500CCDAD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1141EE602B9B35B500CCDAD6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1141EE682B9B370100CCDAD6 /* ContentViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewViewModel.swift; sourceTree = "<group>"; };
+		1141EE6B2B9B4B8300CCDAD6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1141EE6D2B9B4BA600CCDAD6 /* LoginViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewModel.swift; sourceTree = "<group>"; };
+		1141EE702B9B555D00CCDAD6 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				1141EE592B9B35B400CCDAD6 /* StateDataFlowApp.swift */,
-				1141EE5B2B9B35B400CCDAD6 /* ContentView.swift */,
+				1141EE6A2B9B4AE100CCDAD6 /* LoginView */,
+				1141EE672B9B36A600CCDAD6 /* ContentView */,
+				1141EE6F2B9B552D00CCDAD6 /* Views */,
 				1141EE5D2B9B35B500CCDAD6 /* Assets.xcassets */,
 				1141EE5F2B9B35B500CCDAD6 /* Preview Content */,
 			);
@@ -65,6 +75,32 @@
 				1141EE602B9B35B500CCDAD6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1141EE672B9B36A600CCDAD6 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				1141EE5B2B9B35B400CCDAD6 /* ContentView.swift */,
+				1141EE682B9B370100CCDAD6 /* ContentViewViewModel.swift */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		1141EE6A2B9B4AE100CCDAD6 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				1141EE6B2B9B4B8300CCDAD6 /* LoginView.swift */,
+				1141EE6D2B9B4BA600CCDAD6 /* LoginViewViewModel.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		1141EE6F2B9B552D00CCDAD6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1141EE702B9B555D00CCDAD6 /* RootView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1141EE6E2B9B4BA600CCDAD6 /* LoginViewViewModel.swift in Sources */,
 				1141EE5C2B9B35B400CCDAD6 /* ContentView.swift in Sources */,
+				1141EE712B9B555D00CCDAD6 /* RootView.swift in Sources */,
 				1141EE5A2B9B35B400CCDAD6 /* StateDataFlowApp.swift in Sources */,
+				1141EE6C2B9B4B8300CCDAD6 /* LoginView.swift in Sources */,
+				1141EE692B9B370100CCDAD6 /* ContentViewViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
