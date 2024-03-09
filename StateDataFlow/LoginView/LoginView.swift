@@ -11,20 +11,22 @@ struct LoginView: View {
     @EnvironmentObject private var loginViewVM: LoginViewViewModel
     
     var body: some View {
-        TextField("Enter your name", text: $loginViewVM.name)
-            .multilineTextAlignment(.center)
+        ZStack {
+            TextField("Enter your name", text: $loginViewVM.user.name)
+                .multilineTextAlignment(.center)
+            
+            HStack {
+                Spacer()
+                Text("\(loginViewVM.user.name.count)")
+                    .foregroundStyle(loginViewVM.userCheck() ? .green : .red)
+            }
+        }
+        .padding()
         
-        Button(action: login) {
+        Button(action: loginViewVM.login) {
             Label("OK", systemImage: "checkmark.circle")
         }
-    }
-    
-    private func login() {
-        if !loginViewVM.name.isEmpty {
-            loginViewVM.isLoggedIn.toggle()
-            //для сохранения в Юзер Дефаултс
-            //@AppStorage
-        }
+        .disabled(!loginViewVM.userCheck())
     }
 }
 

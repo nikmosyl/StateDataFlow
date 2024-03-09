@@ -12,8 +12,8 @@ struct RootView: View {
     
     var body: some View {
         
-        if loginViewVM.isLoggedIn {
-            ContentView()
+        if loginViewVM.user.isLoggedIn {
+            ContentView(contentViewVM: ContentViewViewModel())
         } else {
             LoginView()
         }

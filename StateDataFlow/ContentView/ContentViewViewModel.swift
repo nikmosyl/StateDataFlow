@@ -6,27 +6,36 @@
 //
 
 import Foundation
-import Combine
+import Observation
 
-final class ContentViewViewModel: ObservableObject {
-    let objectWillChange = ObservableObjectPublisher()
+@Observable
+final class ContentViewViewModel {
     var counter = 3
-    var buttonTitle = "Start"
+    var timerState = TimerState.ready    
     
     private var timer: Timer?
     
-    func startTimer() {
-        if counter > 0 {
-            timer = Timer.scheduledTimer(
-                timeInterval: 1,
-                target: self,
-                selector: #selector(updateCounter),
-                userInfo: nil,
-                repeats: true
-            )
+    func buttonDidTapped() {
+        switch timerState {
+        case .ready:
+            startTimer()
+            timerState = .inProgress
+        case .inProgress:
+            break
+        case .end:
+            counter = 3
+            timerState = .ready
         }
-        
-        buttonDidTapped()
+    }
+    
+    private func startTimer() {
+        timer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(updateCounter),
+            userInfo: nil,
+            repeats: true
+        )
     }
     
     @objc private func updateCounter() {
@@ -34,26 +43,20 @@ final class ContentViewViewModel: ObservableObject {
             counter -= 1
         } else {
             killTimer()
-            buttonTitle = "Reset"
+            timerState = .end
         }
-        
-        objectWillChange.send()
     }
     
     private func killTimer() {
         timer?.invalidate()
         timer = nil
     }
-    
-    private func buttonDidTapped() {
-        if buttonTitle == "Reset" {
-            counter = 3
-            buttonTitle = "Start"
-        } else {
-            buttonTitle = "Wait..."
-        }
-        
-        objectWillChange.send()
-    }
 }
 
+extension ContentViewViewModel {
+    enum TimerState: String {
+        case ready = "Start"
+        case inProgress = "Wait..."
+        case end = "Reset"
+    }
+}
