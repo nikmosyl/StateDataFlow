@@ -17,8 +17,8 @@ struct LoginView: View {
             
             HStack {
                 Spacer()
-                Text("\(loginViewVM.user.name.count)")
-                    .foregroundStyle(loginViewVM.userCheck() ? .green : .red)
+                Text("\(loginViewVM.nameCount)")
+                    .foregroundStyle(loginViewVM.nameIsValid ? .green : .red)
             }
         }
         .padding()
@@ -26,7 +26,7 @@ struct LoginView: View {
         Button(action: loginViewVM.login) {
             Label("OK", systemImage: "checkmark.circle")
         }
-        .disabled(!loginViewVM.userCheck())
+        .disabled(!loginViewVM.nameIsValid)
     }
 }
 

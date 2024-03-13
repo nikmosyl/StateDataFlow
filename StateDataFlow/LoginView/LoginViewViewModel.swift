@@ -8,23 +8,25 @@
 import Foundation
 
 final class LoginViewViewModel: ObservableObject {
-    @Published var user = StorageManager.shared.getUser()
+    
+    @Published var user = StorageManager.shared.fetch()
+    
+    var nameIsValid: Bool {
+        user.name.count > 2
+    }
+    
+    var nameCount: String {
+        user.name.count.formatted()
+    }
     
     func login() {
-        if userCheck() {
-            user.isLoggedIn = true
-            
-            StorageManager.shared.login(user)
-        }
+        user.isLoggedIn = true
+        StorageManager.shared.save(user)
     }
     
     func logout() {
         user.isLoggedIn = false
         user.name = ""
-        
-        StorageManager.shared.logout(user)
-    }
-    func userCheck() -> Bool {
-        user.name.count >= 3 ? true : false
+        StorageManager.shared.delete()
     }
 }

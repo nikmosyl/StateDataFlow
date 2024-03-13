@@ -11,9 +11,8 @@ struct RootView: View {
     @EnvironmentObject private var loginViewVM: LoginViewViewModel
     
     var body: some View {
-        
         if loginViewVM.user.isLoggedIn {
-            ContentView(contentViewVM: ContentViewViewModel())
+            ContentView()
         } else {
             LoginView()
         }

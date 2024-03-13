@@ -5,7 +5,7 @@
 //  Created by nikita on 09.03.24.
 //
 
-struct User {
-    var name: String
-    var isLoggedIn: Bool
+struct User: Codable {
+    var name = ""
+    var isLoggedIn = false
 }

@@ -10,6 +10,7 @@ import Observation
 
 @Observable
 final class ContentViewViewModel {
+    
     var counter = 3
     var timerState = TimerState.ready    
     
